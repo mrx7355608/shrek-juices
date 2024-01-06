@@ -1,0 +1,86 @@
+[
+  {
+    "name": "WATERMELON JUICE",
+    "description": "watermelon juice with a splash of lime is the perfect drink to enjoy on a hot summer day.",
+    "price": 885,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/4.jpg"
+  },
+  {
+    "name": "ORANGE JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It also supplies potassium and thiamin.",
+    "price": 544,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/Orange_fruit.jpg"
+  },
+  {
+    "name": "STRAWBERRY JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color, juicy texture, and sweetness.",
+    "price": 952,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/Strawberry-juice-fruit-drinks_1920x1080.jpg"
+  },
+  {
+    "name": "KIWI JUICE",
+    "description": "A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source of dietary fiber.",
+    "price": 286,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/Kiwi-juice-fruit-drinks_1920x1080.jpg"
+  },
+  {
+    "name": "POMEGRANATE JUICE",
+    "description": "The juice of this fruit is a popular part of healthy diets. Pomegranate seeds get their vibrant red hue from polyphenols.",
+    "price": 262,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/6.jpg"
+  },
+  {
+    "name": "CHERRY JUICE",
+    "description": "cherry juice is a nutritionally wholesome, low-fat drink that can provide you with many health benefits.",
+    "price": 97,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/7.jpg"
+  },
+  {
+    "name": "PINEAPPLE JUICE",
+    "description": "Pineapple juice is a delicious and healthy drink. It contains bromelain, which aids digestion, making it ideal for finishing a meal.",
+    "price": 718,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/8.jpg"
+  },
+  {
+    "name": "PAPAYA JUICE",
+    "description": "Papaya juice is fast gaining popularity for incredible health benefits This papaya juice is great when your body needs a boost of vitaminC",
+    "price": 246,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/9.jpg"
+  },
+  {
+    "name": "GUAVA JUICE",
+    "description": "Guava fruit contains 4 times the vitamin C. The juice of guava leaves has also been known to cure toothaches.",
+    "price": 751,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/11.jpg"
+  },
+  {
+    "name": "MANGO JUICE",
+    "description": "We all have fond memories of fresh homemade mango juice enjoyed in the summer vacations.",
+    "price": 164,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/12.png"
+  },
+  {
+    "name": "SUGARCANE JUICE",
+    "description": "Sugarcane has natural sugar content so diabetic patients should exercise caution.",
+    "price": 36,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/shutterstock_360360530.1920x1080.jpg"
+  },
+  {
+    "name": "APPLE JUICE",
+    "description": "Apple juice is a fruit juice made by the maceration and pressing of an apple.",
+    "price": 163,
+    "type": "fruit-juice",
+    "imageURL": "/fruit-images/videoblocks-slow-motion-video-of-apple-juice-pouring-into-glass-on-natural-background_hhripaclz_thumbnail-full07.png"
+  }
+] 
