@@ -35,4 +35,13 @@ app.get("/contact-us", (req, res) => {
     res.render("contactus")
 })
 
+app.get("/feedback", (req, res) => {
+    res.render("feedback")
+})
+
+app.get("/franchising", (req, res) => {
+    res.render("franchising")
+})
+
+
 export default app;
