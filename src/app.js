@@ -31,4 +31,8 @@ app.get("/", (req, res) => {
     res.render("home")
 })
 
+app.get("/contact-us", (req, res) => {
+    res.render("contactus")
+})
+
 export default app;
