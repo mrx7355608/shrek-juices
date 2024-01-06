@@ -43,5 +43,16 @@ app.get("/franchising", (req, res) => {
     res.render("franchising")
 })
 
+app.get("/store-location", (req, res) => {
+    res.render("storelocation")
+})
+
+app.get("/products/fruits-juice", (req, res) => {
+    res.render("fruit")
+})
+
+app.get("/products/vegetables-juice", (req, res) => {
+    res.render("vegetablejuice")
+})
 
 export default app;
