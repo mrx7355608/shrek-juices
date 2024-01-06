@@ -8,7 +8,7 @@ import { engine } from "express-handlebars"
 
 const app = express();
 
-app.use(helmet())
+// app.use(helmet())
 app.use(hpp())
 app.use(morgan("dev"))
 app.use(express.json())
