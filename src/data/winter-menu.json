@@ -1,0 +1,44 @@
+[
+  {
+    "name": "KEHWA",
+    "description": "\u201cKehwa\u201d has been used as a medicine for thousands of years for its great health benefits.",
+    "imageURL": "/wintermenu-images/1.jpg",
+    "type": "winter-menu",
+    "price": 685
+  },
+  {
+    "name": "CAPPUCCINO",
+    "description": " A cappuccino is an Italian coffee drink that is traditionally prepared with double espresso, hot milk.\n            ",
+    "imageURL": "/wintermenu-images/2.jpg",
+    "type": "winter-menu",
+    "price": 1100
+  },
+  {
+    "name": "ESPRESSO",
+    "description": " A strong brew of coffee produced by forcing boiled water under pressure through finely ground coffee.",
+    "imageURL": "/wintermenu-images/3.jpg",
+    "type": "winter-menu",
+    "price": 443
+  },
+  {
+    "name": "MACCHIATO COFFEE\n                  ",
+    "description": " Macchiato is mostly drunk by espresso lovers who want a bit of a sweeter taste. ",
+    "imageURL": "/wintermenu-images/4.jpg",
+    "type": "winter-menu",
+    "price": 1319
+  },
+  {
+    "name": "BLACK COFFEE",
+    "description": "Black coffee contains Vitamin B2, B3, B5, Manganese, potassium and magnesium.\n                  ",
+    "imageURL": "/wintermenu-images/5.jfif",
+    "type": "winter-menu",
+    "price": 1487
+  },
+  {
+    "name": "CHICKEN CORN SOUP",
+    "description": "Chicken Corn Soup is a delicious and nutritional starter to have before meal. ",
+    "imageURL": "/wintermenu-images/6.jpg",
+    "type": "winter-menu",
+    "price": 922
+  }
+]

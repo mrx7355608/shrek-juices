@@ -1,0 +1,23 @@
+[
+  {
+    "name": "HURRICANE",
+    "description": " A really easy, tweakable recipe for a non-alcoholic version of the Hurricane \u2013 fruity and delicious.",
+    "imageURL": "/mocktail-images/1.jpg",
+    "type": "mocktail",
+    "price": 352
+  },
+  {
+    "name": "SEA BREEZE",
+    "description": "Sea Breeze Mocktail is a non-alcoholic beverage that is combination of cranberry and grapefruit juice.\n            ",
+    "imageURL": "/mocktail-images/2.jpg",
+    "type": "mocktail",
+    "price": 318
+  },
+  {
+    "name": "RICKEY",
+    "description": " Muddle up some fun with an old-fashioned Lime Rickey, a classic vintage mocktail that's as refreshing today.",
+    "imageURL": "/mocktail-images/3.jfif",
+    "type": "mocktail",
+    "price": 1398
+  }
+]

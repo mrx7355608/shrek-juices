@@ -1,0 +1,65 @@
+[
+  {
+    "name": "WATERMELON JUICE",
+    "description": " A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source of\n                    dietary fiber.",
+    "imageURL": "/smoothie-images/1.jpg",
+    "type": "smoothies",
+    "price": 724
+  },
+  {
+    "name": "ORANGE JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It also\n                    supplies potassium and thiamin.\n                    ",
+    "imageURL": "/smoothie-images/2.jpg",
+    "type": "smoothies",
+    "price": 9
+  },
+  {
+    "name": "STRAWBERRY JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color, juicy texture,\n                    and sweetness.",
+    "imageURL": "/smoothie-images/3.jpg",
+    "type": "smoothies",
+    "price": 534
+  },
+  {
+    "name": "KIWI JUICE",
+    "description": " A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source\n                                of\n                                dietary fiber.",
+    "imageURL": "/smoothie-images/4.jpg",
+    "type": "smoothies",
+    "price": 1632
+  },
+  {
+    "name": "POMEGRANATE JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It\n                                also\n                                supplies potassium and thiamin.\n                                ",
+    "imageURL": "/smoothie-images/5.jpg",
+    "type": "smoothies",
+    "price": 1893
+  },
+  {
+    "name": "CHERRY JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color, juicy\n                                texture,\n                                and sweetness.",
+    "imageURL": "/smoothie-images/6.jpg",
+    "type": "smoothies",
+    "price": 667
+  },
+  {
+    "name": "PINEAPPLE JUICE",
+    "description": " A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good\n                                            source of\n                                            dietary fiber.",
+    "imageURL": "/smoothie-images/7.jpg",
+    "type": "smoothies",
+    "price": 1080
+  },
+  {
+    "name": "PAPAYA JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates.\n                                            It also\n                                            supplies potassium and thiamin.\n                                            ",
+    "imageURL": "/smoothie-images/8.jpg",
+    "type": "smoothies",
+    "price": 579
+  },
+  {
+    "name": "GUAVA JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color,\n                                            juicy texture,\n                                            and sweetness.",
+    "imageURL": "/smoothie-images/9.jpg",
+    "type": "smoothies",
+    "price": 10
+  }
+]

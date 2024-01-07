@@ -1,0 +1,44 @@
+[
+  {
+    "name": "WATERMELON JUICE",
+    "description": " A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source of\n              dietary fiber.",
+    "imageURL": "/protienshake-images/1.jpg",
+    "type": "protein-shake",
+    "price": 306
+  },
+  {
+    "name": "ORANGE JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It also\n              supplies potassium and thiamin.\n            ",
+    "imageURL": "/protienshake-images/2.jpg",
+    "type": "protein-shake",
+    "price": 922
+  },
+  {
+    "name": "STRAWBERRY JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color, juicy texture,\n              and sweetness.",
+    "imageURL": "/protienshake-images/3.jpg",
+    "type": "protein-shake",
+    "price": 921
+  },
+  {
+    "name": "KIWI JUICE",
+    "description": " A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source\n                    of\n                    dietary fiber.",
+    "imageURL": "/protienshake-images/4.jfif",
+    "type": "protein-shake",
+    "price": 218
+  },
+  {
+    "name": "POMEGRANATE JUICE",
+    "description": "It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It\n                    also\n                    supplies potassium and thiamin.\n                  ",
+    "imageURL": "/protienshake-images/5.jpg",
+    "type": "protein-shake",
+    "price": 251
+  },
+  {
+    "name": "CHERRY JUICE",
+    "description": "It is widely appreciated for its characteristic aroma, bright red color, juicy\n                    texture,\n                    and sweetness.",
+    "imageURL": "/protienshake-images/6.jpg",
+    "type": "protein-shake",
+    "price": 10
+  }
+]

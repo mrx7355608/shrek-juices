@@ -1,0 +1,23 @@
+[
+  {
+    "name": "CHOCLATE MILK",
+    "description": " Chocolate milk is sometimes promoted as a great way to increase calcium and vitamin D",
+    "imageURL": "",
+    "type": "chocolate-juice",
+    "price": 1635
+  },
+  {
+    "name": "DARK CHOCLATE",
+    "description": "Small amounts of dark chocolate not only may be good for your heart, but also may lift your mood, help you live longer.\n                  ",
+    "imageURL": "/chocolatejuice-images/5.jpg",
+    "type": "chocolate-juice",
+    "price": 779
+  },
+  {
+    "name": "FROZEN HOT CHOCLATE",
+    "description": "Frozen Hot Chocolate is a refreshing summertime milkshake that's more icy than creamy, with the rich flavors",
+    "imageURL": "/chocolatejuice-images/6.jpg",
+    "type": "chocolate-juice",
+    "price": 2526
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "CUCUMBER JUICE",
+    "description": " Cucumber juice is a very healthy and versatile drink. Cucumbers have a high content of water",
+    "imageURL": "/vegetable-images/1.jpg",
+    "type": "vegetable-juice",
+    "price": 641
+  },
+  {
+    "name": "TOMATO JUICE",
+    "description": "Tomato juice is a popular drink, made from the juice of fresh tomatoes. Though you can buy pure tomato juice.\n            ",
+    "imageURL": "/vegetable-images/2.jpg",
+    "type": "vegetable-juice",
+    "price": 637
+  },
+  {
+    "name": "LEMON JUICE",
+    "description": "Lemon juice is also an effective way to reduce weight as it increases the body's metabolic rate. ",
+    "imageURL": "/vegetable-images/3.jpg",
+    "type": "vegetable-juice",
+    "price": 1492
+  },
+  {
+    "name": "CARROT JUICE",
+    "description": "Carrot juice packs a nutrient-rich punch. Learn how it boosts your immune system, keeps your eyes healthy.",
+    "imageURL": "/vegetable-images/4.jpg",
+    "type": "vegetable-juice",
+    "price": 438
+  },
+  {
+    "name": "BROCOLI JUICE",
+    "description": "Broccoli juice serves as an excellent source of vitamin K. Each 4-ounce serving of juice provides 134.6 micrograms of vitamin K.\n                  ",
+    "imageURL": "/vegetable-images/5.jpg",
+    "type": "vegetable-juice",
+    "price": 201
+  },
+  {
+    "name": "PARSLEY JUICE",
+    "description": "Parsley juice is a rich source of chlorophyll, an antioxidant compound that gives parsley its green color.",
+    "imageURL": "/vegetable-images/6.jpg",
+    "type": "vegetable-juice",
+    "price": 710
+  },
+  {
+    "name": "SPINACH JUICE",
+    "description": "This healthy spinach juice is a green nutrient powerhouse loaded with calcium for bone health, and vitamins A and C for antioxidants.",
+    "imageURL": "/vegetable-images/7.jpeg",
+    "type": "vegetable-juice",
+    "price": 1091
+  },
+  {
+    "name": "WHEAT GRASS JUICE",
+    "description": "It\u2019s an incredibly nutrient-dense ingredient and supplies a significant amount of iron, phosphorus, magnesium, and copper.\n                        ",
+    "imageURL": "/vegetable-images/8.jpg",
+    "type": "vegetable-juice",
+    "price": 229
+  },
+  {
+    "name": "BITTER GOURD JUICE",
+    "description": "Bitter gourd or bitter melon (karela) juice is the best natural medicine for diabetes. Drinking it early in the morning on an empty stomach.",
+    "imageURL": "/vegetable-images/9.jpg",
+    "type": "vegetable-juice",
+    "price": 311
+  }
+]
