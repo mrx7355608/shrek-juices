@@ -5,6 +5,7 @@ import hpp from "hpp";
 import path from "path";
 import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
+import JuiceModel from "./models/juices.model.js";
 
 const app = express();
 
@@ -13,9 +14,7 @@ app.use(hpp());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Serve css and images
 app.use(express.static(path.join(__dirname, "..", "..", "/public")));
-// View engine setup
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "..", "/views"));
 app.engine(
@@ -27,52 +26,30 @@ app.engine(
   }),
 );
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.render("home");
 });
 
-app.get("/contact-us", (req, res) => {
+app.get("/contact-us", (_req, res) => {
   res.render("contactus");
 });
 
-app.get("/feedback", (req, res) => {
+app.get("/feedback", (_req, res) => {
   res.render("feedback");
 });
 
-app.get("/franchising", (req, res) => {
+app.get("/franchising", (_req, res) => {
   res.render("franchising");
 });
 
-app.get("/store-location", (req, res) => {
+app.get("/store-location", (_req, res) => {
   res.render("storelocation");
 });
 
-app.get("/products/fruits-juice", (req, res) => {
-  res.render("fruit");
-});
-
-app.get("/products/vegetables-juice", (req, res) => {
-  res.render("vegetablejuice");
-});
-
-app.get("/products/smoothies", (req, res) => {
-  res.render("smoothies");
-});
-
-app.get("/products/winter-menu", (req, res) => {
-  res.render("wintermenu");
-});
-
-app.get("/products/chocolate-juices", (req, res) => {
-  res.render("chocolatejuices");
-});
-
-app.get("/products/protien-shakes", (req, res) => {
-  res.render("protienshake");
-});
-
-app.get("/products/mocktails", (req, res) => {
-  res.render("mocktails");
+app.get("/products/:type", async (req, res) => {
+  const { type } = req.params;
+  const juices = await JuiceModel.find({ type }).lean();
+  res.render("juices-page", { type, juices });
 });
 
 export default app;

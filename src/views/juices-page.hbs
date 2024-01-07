@@ -1,0 +1,33 @@
+{{> carousel}}
+<p class="display-1 text-center">{{type}}</p>
+
+<center>
+<div class="container-fluid">
+  <!-- Card deck -->
+  <div class="d-flex flex-wrap gap-4">
+    <!-- Card -->
+    {{#each juices}}
+      <div class="card mb-4">
+
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top" src="{{imageURL}}" alt="not available" />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <h4 class="card-title">{{name}}</h4>
+          <p class="card-text">{{description}}</p>
+          <h4 class="blink">Price: Pkr.{{price}}</h4>
+          <center>
+            <button type="button" class="btn aqua-gradient btn-md" onclick="show()">ORDER NOW</button>
+          </center>
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+</div>
