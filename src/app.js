@@ -55,4 +55,24 @@ app.get("/products/vegetables-juice", (req, res) => {
     res.render("vegetablejuice")
 })
 
+app.get("/products/smoothies", (req, res) => {
+    res.render("smoothies")
+})
+
+app.get("/products/winter-menu", (req, res) => {
+    res.render("wintermenu")
+})
+
+app.get("/products/chocolate-juices", (req, res) => {
+    res.render("chocolatejuices")
+})
+
+app.get("/products/protien-shakes", (req, res) => {
+    res.render("protienshake")
+})
+
+app.get("/products/mocktails", (req, res) => {
+    res.render("mocktails")
+})
+
 export default app;
