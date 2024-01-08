@@ -3,9 +3,13 @@ import morgan from "morgan";
 import helmet from "helmet";
 import hpp from "hpp";
 import path from "path";
+import session from "express-session";
+import passport from "passport";
+import mongoStore from "connect-mongodb-session";
 import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
 import JuiceModel from "./models/juices.model.js";
+import passportSetup from "./passportSetup.js";
 
 const app = express();
 
@@ -25,6 +29,22 @@ app.engine(
     layoutsDir: __dirname + "/../views/layouts",
   }),
 );
+// Sessions setup
+app.use(
+  session({
+    key: process.env.SESSIONS_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production" ? true : false,
+    },
+  }),
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passportSetup();
 
 app.get("/", (_req, res) => {
   res.render("home");
