@@ -30,11 +30,17 @@ app.engine(
   }),
 );
 // Sessions setup
+const MongoStore = mongoStore(session);
+const store = new MongoStore({
+  uri: process.env.DB_URL,
+  collection: "sessions",
+});
 app.use(
   session({
     key: process.env.SESSIONS_SECRET,
     resave: false,
     saveUninitialized: false,
+    store: store,
     cookie: {
       maxAge: 24 * 60 * 60 * 1000, // 1 day
       httpOnly: true,
