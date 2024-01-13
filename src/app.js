@@ -78,8 +78,8 @@ app.get("/products/:type", async (req, res) => {
   res.render("juices-page", { type, juices });
 });
 
-app.get("/login", (_req, res) => {
-    res.render("login")
+app.get("/auth/login", (_req, res) => {
+    res.render("login", { layout: "auth" })
 })
 
 export default app;

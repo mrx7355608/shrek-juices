@@ -1,8 +1,8 @@
-  <center>
-    <img src="/logo.png" alt="logo" height="100px"/>
-  </center>
+<center class="p-3">
+    {{> logo}}
+</center>
 
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,6 +48,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/store-location">Store location</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/signup">Signup</a>
+        </li>
       </ul>
       <form class="form-inline my-1">
         <div class="md-form form-sm my-0">
@@ -55,6 +61,6 @@
         </div>
         <button class="btn btn-outline-white btn-sm my-0" type="submit">Search</button>
       </form>
-  </nav>
+</nav>
 
 
