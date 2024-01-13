@@ -1,6 +1,6 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
-import UserModel from "./models/user.model";
+import UserModel from "./models/user.model.js";
 import bcryptjs from "bcryptjs";
 import validator from "validator";
 
