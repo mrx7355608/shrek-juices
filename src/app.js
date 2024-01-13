@@ -37,7 +37,7 @@ const store = new MongoStore({
 });
 app.use(
   session({
-    key: process.env.SESSIONS_SECRET,
+    secret: process.env.SESSIONS_SECRET,
     resave: false,
     saveUninitialized: false,
     store: store,
@@ -77,5 +77,9 @@ app.get("/products/:type", async (req, res) => {
   const juices = await JuiceModel.find({ type }).lean();
   res.render("juices-page", { type, juices });
 });
+
+app.get("/login", (_req, res) => {
+    res.render("login")
+})
 
 export default app;
