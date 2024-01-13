@@ -82,4 +82,8 @@ app.get("/auth/login", (_req, res) => {
     res.render("login", { layout: "auth" })
 })
 
+app.get("/auth/signup", (_req, res) => {
+    res.render("signup", { layout: "auth" })
+})
+
 export default app;
