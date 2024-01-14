@@ -1,5 +1,6 @@
 import { Router } from "express";
 import JuiceModel from "../models/juices.model.js";
+import convertJuiceTypeName from "../utils/convertJuiceTypeName.js";
 
 const viewsRouter = Router();
 
@@ -23,10 +24,10 @@ viewsRouter.get("/store-location", (_req, res) => {
   res.render("storelocation");
 });
 
-viewsRouter.get("/products/:type", async (req, res) => {
+viewsRouter.get("/juices/:type", async (req, res) => {
   const { type } = req.params;
   const juices = await JuiceModel.find({ type }).lean();
-  res.render("juices-page", { type, juices });
+  res.render("juices-page", { type: convertJuiceTypeName(type), juices });
 });
 
 viewsRouter.get("/login", (_req, res) => {
