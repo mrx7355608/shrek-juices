@@ -8,8 +8,8 @@ import passport from "passport";
 import mongoStore from "connect-mongodb-session";
 import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
-import JuiceModel from "./models/juices.model.js";
 import passportSetup from "./passportSetup.js";
+import viewsRouter from "./routes/views.routes.js"
 
 const app = express();
 
@@ -52,38 +52,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 passportSetup();
 
-app.get("/", (_req, res) => {
-  res.render("home");
-});
-
-app.get("/contact-us", (_req, res) => {
-  res.render("contactus");
-});
-
-app.get("/feedback", (_req, res) => {
-  res.render("feedback");
-});
-
-app.get("/franchising", (_req, res) => {
-  res.render("franchising");
-});
-
-app.get("/store-location", (_req, res) => {
-  res.render("storelocation");
-});
-
-app.get("/products/:type", async (req, res) => {
-  const { type } = req.params;
-  const juices = await JuiceModel.find({ type }).lean();
-  res.render("juices-page", { type, juices });
-});
-
-app.get("/auth/login", (_req, res) => {
-    res.render("login", { layout: "auth" })
-})
-
-app.get("/auth/signup", (_req, res) => {
-    res.render("signup", { layout: "auth" })
-})
+// ROUTES
+app.use("/", viewsRouter);
 
 export default app;
