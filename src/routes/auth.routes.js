@@ -1,5 +1,6 @@
 import { Router } from "express";
 import UserModel from "../models/user.model.js"
+import passport from "passport";
 
 const authRouter = Router();
 
@@ -19,5 +20,10 @@ authRouter.post("/signup", async (req, res) => {
         userEmail: newUser.email 
     })
 })
+
+authRouter.post("/login", passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login"
+}))
 
 export default authRouter;
