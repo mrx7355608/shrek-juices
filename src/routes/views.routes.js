@@ -1,5 +1,5 @@
 import { Router } from "express";
-import JuiceModel from "./models/juices.model.js";
+import JuiceModel from "../models/juices.model.js";
 
 const viewsRouter = Router();
 
@@ -29,11 +29,11 @@ viewsRouter.get("/products/:type", async (req, res) => {
   res.render("juices-page", { type, juices });
 });
 
-viewsRouter.get("/auth/login", (_req, res) => {
+viewsRouter.get("/login", (_req, res) => {
     res.render("login", { layout: "auth" })
 })
 
-viewsRouter.get("/auth/signup", (_req, res) => {
+viewsRouter.get("/signup", (_req, res) => {
     res.render("signup", { layout: "auth" })
 })
 
