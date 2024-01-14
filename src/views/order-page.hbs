@@ -1,0 +1,27 @@
+<div class="d-flex flex-column align-items-center justify-content-center p-3">
+    <div class="d-flex">
+        <img class="mr-3" width="140px" height="140px" src="{{juice.imageURL}}" alt="juice-image" />
+        <!--Card content-->
+        <div class="">
+          <h5 class="card-title font-weight-bold">{{juice.name}}</h5>
+          <h6 class="">Price: Pkr.{{juice.price}}</h6>
+        </div>
+    </div>
+    <div class="w-100">
+        <form method="post" class="mt-5 w-100" style="max-width: 600px;">
+          <div class="form-group">
+            <label>Address</label>
+            <input name="address" type="text" class="form-control" placeholder="Enter your address">
+            <small class="form-text text-danger">{{ messages.addressError }}</small>
+          </div>
+
+          <div class="form-group mt-4">
+            <label>Phone number</label>
+            <input name="phoneNumber" type="tel" class="form-control" placeholder="Phone number">
+            <small class="form-text text-danger">{{ messages.phoneNumberError }}</small>
+          </div>
+
+          <button type="submit" class="mx-0 btn btn-dark mt-3 mb-5 w-100 shadow-none rounded font-weight-bold">Confirm Order</button>
+        </form>
+    </div>
+</div>

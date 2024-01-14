@@ -5,14 +5,15 @@
 <div class="container-fluid">
   <!-- Card deck -->
   <div class="d-flex flex-wrap p-2" style="max-width: 100vw; gap: 1rem">
-    <!-- Card -->
     {{#each juices}}
+
+    <!-- Card -->
       <div class="card mb-4" style="width: 400px">
 
         <!--Card image-->
         <div class="view overlay">
-          <img class="card-img-top" src="{{imageURL}}" alt="not available" />
-          <a href="#!">
+          <img class="card-img-top" src="{{imageURL}}" alt="juice-image" />
+          <a href="#">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
@@ -23,7 +24,9 @@
           <p class="card-text">{{description}}</p>
           <h4 class="blink">Price: Pkr.{{price}}</h4>
           <center>
-            <button type="button" class="btn aqua-gradient btn-md" onclick="show()">ORDER NOW</button>
+            <a href="/order/{{_id}}">
+                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
+            </a>
           </center>
         </div>
 
