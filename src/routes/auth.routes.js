@@ -8,6 +8,7 @@ authRouter.post("/signup", async (req, res) => {
     /*
         * TODO: validate user data
     */
+
     const newUser = await UserModel.create(req.body)
     console.log(newUser);
 
@@ -23,7 +24,8 @@ authRouter.post("/signup", async (req, res) => {
 
 authRouter.post("/login", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login"
+    failureRedirect: "/login",
+    failureFlash: true
 }))
 
 export default authRouter;
