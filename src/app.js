@@ -62,6 +62,7 @@ app.use((_req, res) => {
     res.render("notfound");
 })
 app.use((err, req, res, next) => {
+    console.log(err.message);
     res.render("internal-error");
 })
 

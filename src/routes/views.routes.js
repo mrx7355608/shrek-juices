@@ -41,7 +41,7 @@ viewsRouter.get("/signup", (_req, res) => {
 viewsRouter.get("/order/:juiceID", async (req, res) => {
     const { juiceID } = req.params
     const juice = await JuiceModel.findById(juiceID).lean();
-    res.render("order-page", { juice })
+    res.render("order-page", { juice, user: req.user })
 })
 
 export default viewsRouter;

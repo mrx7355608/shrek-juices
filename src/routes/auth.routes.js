@@ -9,12 +9,12 @@ authRouter.post("/signup", async (req, res) => {
     try {
         // Validate user data
         const { error } = signupSchema.validate(req.body, { abortEarly: false });
-        const { details } = error;
 
         /*
             * TODO: find another method for this code block
         */
         if (error) {
+            const { details } = error;
             for (let i = 0; i < details.length; i++) {
                 if (details[i].path[0] === "firstname") {
                     req.flash("firstNameError", details[i].message)
@@ -51,6 +51,7 @@ authRouter.post("/signup", async (req, res) => {
             userEmail: newUser.email 
         })
     } catch (error) {
+        console.log(error.message)
         return res.render("internal-error");
     }
 })
