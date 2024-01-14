@@ -56,5 +56,12 @@ passportSetup();
 // ROUTES
 app.use("/", viewsRouter);
 app.use("/auth", authRouter);
+app.use((_req, res) => {
+    res.render("notfound");
+})
+app.use((err, req, res, next) => {
+    res.render("internal-error");
+})
+
 
 export default app;
