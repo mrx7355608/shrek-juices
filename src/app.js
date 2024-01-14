@@ -10,6 +10,7 @@ import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
 import passportSetup from "./passportSetup.js";
 import viewsRouter from "./routes/views.routes.js"
+import authRouter from "./routes/auth.routes.js"
 
 const app = express();
 
@@ -54,5 +55,6 @@ passportSetup();
 
 // ROUTES
 app.use("/", viewsRouter);
+app.use("/auth", authRouter);
 
 export default app;
