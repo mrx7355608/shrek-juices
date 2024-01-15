@@ -10,9 +10,12 @@
     </div>
     {{#unless user}}
     <div class="alert alert-info w-100 mt-4 mb-5">Please login to place your order</div>
-    {{/unless}}
+
+    {{else}}
+
     {{#unless user.isVerified}}
     <div class="alert alert-info w-100 mt-4 mb-5">Please verify your account to place order</div>
+
     {{else}}
     <div class="w-100">
         <form method="post" class="mt-5 w-100" style="max-width: 600px;">
@@ -31,5 +34,6 @@
           <button type="submit" class="mx-0 btn btn-dark mt-3 mb-5 w-100 shadow-none rounded font-weight-bold">Confirm Order</button>
         </form>
     </div>
+    {{/unless}}
     {{/unless}}
 </div>

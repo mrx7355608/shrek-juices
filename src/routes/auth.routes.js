@@ -2,6 +2,7 @@ import { Router } from "express";
 import UserModel from "../models/user.model.js"
 import passport from "passport";
 import { signupSchema } from "../validators/auth.validators.js";
+import sendVerificationEmail from "../utils/sendVerificationEmail.js"
 
 const authRouter = Router();
 
@@ -35,17 +36,20 @@ authRouter.post("/signup", async (req, res) => {
             return res.redirect("back")
         }
 
-        /*
-            * TODO: check if email is already registered or not
-        */
+        // Check if user already exists in database
+        const userExists = await UserModel.findOne({ email: req.body.email });
+        if (userExists) {
+            req.flash("userAlreadyExistsError", "Email is already registered");
+            return res.redirect("back")
+        }
 
         // Add user in db
         const newUser = await UserModel.create(req.body);
 
-        /*
-            * TODO: send verification email
-        */
-
+        // Send verification email
+        await sendVerificationEmail(newUser.email, "ddd");
+        
+        // Render a success page
         res.render("signup-success-message", { 
             layout: "auth", 
             userEmail: newUser.email 
