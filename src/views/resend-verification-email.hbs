@@ -1,0 +1,23 @@
+<div class="w-100 p-4" style="min-height: 60vh;">
+    <h1 class="mb-5 display-4 font-weight-bold">Resend Verification Email</h1>
+
+    <form method="post" action="/auth/resend-verification-email" class="mt-4 w-100 mx-auto" style="max-width: 600px;">
+      {{#if messages.resendVerificationError }}
+        <div class="alert alert-danger" role="alert">{{ messages.resendVerificationError }}</div>
+      {{/if}}
+
+      {{#if messages.resendVerificationSuccess }}
+        <div class="alert alert-success" role="alert">{{ messages.resendVerificationSuccess }}</div>
+      {{/if}}
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <button type="submit" class="btn btn-outline-dark mt-3 w-100 shadow-none rounded font-weight-bold">Resend</button>
+
+    </form>
+
+</div>

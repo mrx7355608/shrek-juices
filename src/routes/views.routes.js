@@ -44,4 +44,8 @@ viewsRouter.get("/order/:juiceID", async (req, res) => {
     res.render("order-page", { juice, user: req.user })
 })
 
+viewsRouter.get("/resend-verification-email", (_req, res) => {
+    res.render("resend-verification-email", { layout: "auth" });
+})
+
 export default viewsRouter;

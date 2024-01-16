@@ -1,5 +1,7 @@
 import passport from "passport";
 import { Router } from "express";
+import validator from "validator";
+import { verifyToken } from "../utils/jwt.js";
 import UserModel from "../models/user.model.js"
 import { sendVerificationEmail } from "../utils/emails.js"
 import { signupSchema } from "../validators/auth.validators.js";
@@ -67,5 +69,79 @@ authRouter.post("/login", passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true
 }))
+
+authRouter.get("/verify-email", async (req, res) => {
+    try {
+        // If user is already verified, redirect him back
+        if (req.isAuthenticated() && req.user.isVerified) {
+            return res.redirect("back")
+        }
+
+        // Check if token exists in url query "token"
+        const { token } = req.query;
+        if (!token) {
+            req.flash("missingTokenError", "Verification token is missing, make sure you have copied the url properly")
+            return res.render("verify-email");
+        }
+
+        // Validate token
+        const payload = verifyToken(token);
+        const { userID } = payload;
+
+        // Check if user exists
+        const user = await UserModel.findById(userID);
+        if (!user) {
+            req.flash("emailVerificationError", "User no longer exists");
+            res.render("verify-email", { layout: "auth" });
+        }
+
+        await UserModel.findByIdAndUpdate(userID, { isVerified: true });
+        req.flash("emailVerificationSuccess", "Your email has been verified successfully!");
+        res.render("verify-email", { layout: "auth" });
+    } catch (err) {
+        if (err.name === "TokenExpiredError") {
+            req.flash("tokenExpiredError", "Verification token has expired, request a new verification link")
+        } else if (err.name === "JsonWebTokenError") {
+            req.flash("invalidTokenError", "Verification token is invalid")
+        } else {
+            res.render("internal-error");
+        }
+        return res.render("verify-email", { layout: "auth" })
+    }
+})
+
+authRouter.post("/resend-verification-email", async(req, res) => {
+    const { email } = req.body;
+    // Check if email is given and is valid
+    if (!email) {
+        req.flash("resendVerificationError", "Please enter your email address");
+        return res.redirect("back")
+    }
+    if (!validator.isEmail(email)) {
+        req.flash("resendVerificationError", "Invalid email address");
+        return res.redirect("back")
+    }
+
+    // Check if a user is registered on the given email
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+        req.flash("resendVerificationError", "Account not found");
+        return res.redirect("back")
+    }
+
+    // Check if the email is already verified or not
+    if (user.isVerified) {
+        req.flash("resendVerificationError", "Email is already verified");
+        return res.redirect("back")
+    }
+
+    // Send verification email
+    const verificationLink = createVerificationLink(user._id);
+    await sendVerificationEmail(user.email, verificationLink);
+
+    req.flash("resendVerificationSuccess", "Email sent!");
+    return res.redirect("back")
+
+})
 
 export default authRouter;
