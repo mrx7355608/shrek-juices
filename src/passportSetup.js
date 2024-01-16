@@ -39,7 +39,7 @@ export default function passportSetup() {
   // De-serializer
   passport.deserializeUser(async (id, done) => {
     try {
-      const user = await UserModel.findById(id);
+      const user = await UserModel.findById(id).lean();
       return done(null, user);
     } catch (err) {
       done(err);
