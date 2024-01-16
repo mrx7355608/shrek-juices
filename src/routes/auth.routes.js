@@ -1,8 +1,9 @@
+import passport from "passport";
 import { Router } from "express";
 import UserModel from "../models/user.model.js"
-import passport from "passport";
+import { sendVerificationEmail } from "../utils/emails.js"
 import { signupSchema } from "../validators/auth.validators.js";
-import sendVerificationEmail from "../utils/sendVerificationEmail.js"
+import { createVerificationLink } from "../utils/createLinks.js"
 
 const authRouter = Router();
 
@@ -47,7 +48,8 @@ authRouter.post("/signup", async (req, res) => {
         const newUser = await UserModel.create(req.body);
 
         // Send verification email
-        await sendVerificationEmail(newUser.email, "ddd");
+        const verificationLink = createVerificationLink(newUser._id);
+        await sendVerificationEmail(newUser.email, verificationLink);
         
         // Render a success page
         res.render("signup-success-message", { 

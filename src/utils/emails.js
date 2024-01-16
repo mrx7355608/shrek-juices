@@ -15,7 +15,9 @@ async function sendVerificationEmail(receiver, verificationLink) {
         from: process.env.EMAIL_SENDER,
         to: receiver,
         subject: "Account Verification",
-        text: `Please verify your account\n${verificationLink}`
+        html: `<p>Please verify your account</p>
+        <a href="${verificationLink}" target="_blank">Verify</a>
+        `
     }
     await transport.sendMail(mailOptions);
     console.log("mail sent!")
