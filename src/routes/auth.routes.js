@@ -3,6 +3,7 @@ import { Router } from "express";
 import validator from "validator";
 import { verifyToken } from "../utils/jwt.js";
 import UserModel from "../models/user.model.js"
+import TokenModel from "../models/token.model.js"
 import { sendVerificationEmail } from "../utils/emails.js"
 import { signupSchema } from "../validators/auth.validators.js";
 import { createVerificationLink } from "../utils/createLinks.js"
@@ -49,8 +50,12 @@ authRouter.post("/signup", async (req, res) => {
         // Add user in db
         const newUser = await UserModel.create(req.body);
 
+        // Create a verification link and save the token
+        // in database
+        const { token, verificationLink } = createVerificationLink(newUser._id);
+        await TokenModel.create({ token });
+
         // Send verification email
-        const verificationLink = createVerificationLink(newUser._id);
         await sendVerificationEmail(newUser.email, verificationLink);
         
         // Render a success page
@@ -84,11 +89,20 @@ authRouter.get("/verify-email", async (req, res) => {
             return res.render("verify-email");
         }
 
-        // Validate token
+        // Verify token
         const payload = verifyToken(token);
-        const { userID } = payload;
+
+        // Verify that token is not used before
+        // Context: After a token is used to verify an account,
+        //          it is deleted from database
+        const tokenExists = await TokenModel.findOne({ token });
+        if (!tokenExists) {
+            req.flash("invalidTokenError", "Verification token is invalid");
+            return res.render("verify-email", { layout: "auth" });
+        } 
 
         // Check if user exists
+        const { userID } = payload;
         const user = await UserModel.findById(userID);
         if (!user) {
             req.flash("emailVerificationError", "User no longer exists");
@@ -96,6 +110,7 @@ authRouter.get("/verify-email", async (req, res) => {
         }
 
         await UserModel.findByIdAndUpdate(userID, { isVerified: true });
+        await TokenModel.findByIdAndDelete(tokenExists._id);
         req.flash("emailVerificationSuccess", "Your email has been verified successfully!");
         res.render("verify-email", { layout: "auth" });
     } catch (err) {
@@ -135,8 +150,11 @@ authRouter.post("/resend-verification-email", async(req, res) => {
         return res.redirect("back")
     }
 
+    // Create a verification link and save it in database
+    const { token, verificationLink } = createVerificationLink(user._id);
+    await TokenModel.create({ token });
+
     // Send verification email
-    const verificationLink = createVerificationLink(user._id);
     await sendVerificationEmail(user.email, verificationLink);
 
     req.flash("resendVerificationSuccess", "Email sent!");
