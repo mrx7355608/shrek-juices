@@ -162,4 +162,11 @@ authRouter.post("/resend-verification-email", async(req, res) => {
 
 })
 
+authRouter.post("/logout", (req, res) => {
+    req.logout(function(err) {
+        if (err) return res.render("internal-error");
+        return res.redirect("/")
+    })
+})
+
 export default authRouter;

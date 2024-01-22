@@ -48,12 +48,22 @@
         <li class="nav-item">
           <a class="nav-link" href="/store-location">Store location</a>
         </li>
+
+        {{#unless user}}
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/signup">Signup</a>
         </li>
+        {{/unless}}
+
+        {{#if user}}
+        <form action="/auth/logout" method="post" class="nav-item">
+            <button type="submit" class="btn btn-dark btn-md text-white font-weight-bold shadow-none">Logout</button>
+        </form>
+        {{/if}}
+
       </ul>
       <form class="form-inline my-1">
         <div class="md-form form-sm my-0">

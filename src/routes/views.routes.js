@@ -4,6 +4,14 @@ import convertJuiceTypeName from "../utils/convertJuiceTypeName.js";
 
 const viewsRouter = Router();
 
+viewsRouter.use((req, res, next) => {
+    /* 
+        TODO: remove sensitive data from req.user
+    */
+    res.locals.user = req.user;
+    return next();
+});
+
 viewsRouter.get("/", (_req, res) => {
   res.render("home");
 });
