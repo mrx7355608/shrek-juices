@@ -12,6 +12,7 @@ import passportSetup from "./passportSetup.js";
 import flash from "express-flash"
 import viewsRouter from "./routes/views.routes.js"
 import authRouter from "./routes/auth.routes.js"
+import indexRouter from "./routes/index.routes.js"
 
 const app = express();
 
@@ -56,8 +57,10 @@ app.use(passport.session());
 passportSetup();
 
 // ROUTES
+app.use("/", indexRouter);
 app.use("/", viewsRouter);
 app.use("/auth", authRouter);
+
 app.use((_req, res) => {
     res.render("notfound");
 })

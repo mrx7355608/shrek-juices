@@ -20,7 +20,16 @@ async function sendVerificationEmail(receiver, verificationLink) {
         `
     }
     await transport.sendMail(mailOptions);
-    console.log("mail sent!")
+}
+
+async function sendContactEmail(customerEmail, message) {
+    const mailOptions = {
+        to: process.env.EMAIL_SENDER,
+        from: customerEmail,
+        subject: "Contact Form",
+        text: message
+    }
+    await transport.sendMail(mailOptions);
 }
 
 /*
@@ -37,5 +46,6 @@ async function sendOrderPlacedEmail() {}
 export { 
     sendVerificationEmail,
     sendPasswordResetEmail,
-    sendOrderPlacedEmail
+    sendOrderPlacedEmail,
+    sendContactEmail
 }
