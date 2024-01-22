@@ -37,15 +37,34 @@ async function sendContactEmail(customerEmail, message) {
 */
 async function sendPasswordResetEmail() {}
 
-/*
-    * TODO: send order placed email
-*/
-async function sendOrderPlacedEmail() {}
+async function sendOrderPlacedEmailToCustomer(customerEmail, juice) {
+    const mailOptions = {
+        from: process.env.EMAIL_SENDER,
+        to: customerEmail,
+        subject: "Your order has been placed",
+        html: `Your order of ${juice.name} has been placed successfully. You will receive your order in very short time`
+    }
+    await transport.sendMail(mailOptions);
+}
 
+async function sendOrderPlacedEmailToAdmin(adminEmail, customerEmail, address, phoneNumber, juice) {
+    const mailOptions = {
+        from: process.env.EMAIL_SENDER,
+        to: adminEmail,
+        subject: "[SHREK-JUICES] New Order",
+        html: `
+            <p>A new order of ${juice.name} has been placed by ${customerEmail}.</p>
+            <p>Address: ${address}</p>
+            <p>Ph Number: ${phoneNumber}</p>
+        `
+    }
+    await transport.sendMail(mailOptions);
+}
 
 export { 
     sendVerificationEmail,
     sendPasswordResetEmail,
-    sendOrderPlacedEmail,
+    sendOrderPlacedEmailToCustomer,
+    sendOrderPlacedEmailToAdmin,
     sendContactEmail
 }

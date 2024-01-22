@@ -18,6 +18,9 @@
 
     {{else}}
     <div class="w-100">
+    {{#if messages.orderSuccess}}
+    <div class="alert alert-success mt-5">{{ messages.orderSuccess }}</div>
+    {{/if}}
         <form method="post" class="mt-5 w-100" style="max-width: 600px;">
           <div class="form-group">
             <label>Address</label>
