@@ -20,10 +20,6 @@ viewsRouter.get("/contact-us", (_req, res) => {
   res.render("contactus");
 });
 
-viewsRouter.get("/feedback", (_req, res) => {
-  res.render("feedback");
-});
-
 viewsRouter.get("/franchising", (_req, res) => {
   res.render("franchising");
 });
