@@ -12,9 +12,9 @@ viewsRouter.use((req, res, next) => {
   return next();
 });
 
-// TODO: show random jucies on homepage
 viewsRouter.get("/", async (_req, res) => {
-  res.render("home");
+  const randomJuices = await JuiceModel.aggregate([{ $sample: { size: 20 } }]);
+  res.render("home", { juices: randomJuices });
 });
 
 viewsRouter.get("/contact-us", (_req, res) => {

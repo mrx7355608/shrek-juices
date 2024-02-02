@@ -3,474 +3,62 @@
 
   <center>
     <div class="container-fluid">
-
-
       <!-- Card deck -->
-      <div class="card-deck">
-
+      <div class="card-deck" style="flex-wrap: wrap;">
+      {{#each juices}}
         <!-- Card -->
-        <div class="card mb-4">
-
+        <div class="card mb-4" style="min-width: 400px; max-width: 400px;">
           <!--Card image-->
           <div class="view overlay">
-            <img class="card-img-top" src="Kiwi-juice-fruit-drinks_1920x1080.jpg">
-            <a href="#!">
-
-              <div class="mask rgba-white-slight"></div>
-            </a>
+            <img class="card-img-top" src="{{imageURL}}">
           </div>
-
-
-
           <!--Card content-->
           <div class="card-body">
-
             <!--Title-->
-            <h4 class="card-title">KIWI JUICE</h4>
+            <h4 class="card-title">{{name}}</h4>
             <!--Text-->
-            <p class="card-text"> A Fresh kiwi fruit is rich in Vitamin C, Vitamin K, Vitamin E and a good source of
-              dietary fiber.</p>
-            <h4 class="blink">Price:200Rs</h4>
+            <p class="card-text">{{description}}</p>
+            <h4 class="blink">Price: Pkr.{{price}}</h4>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
             <center>
               <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
             </center>
           </div>
-
         </div>
-        <!-- Card -->
-
-        <!-- Card -->
-        <div class="card mb-4">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img class="card-img-top" src="Orange_fruit.jpg" alt="Card image cap">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!--Card content-->
-          <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">ORANGE JUICE</h4>
-            <!--Text-->
-            <p class="card-text">It has 20.8 g of sugars, 112 Calories and almost 26 grams of carbohydrates. It also
-              supplies potassium and thiamin.<br>
-            </p>
-            <h4 class="blink">Price:250Rs</h4>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-            </center>
-          </div>
-
-        </div>
-        <!-- Card -->
-
-        <!-- Card -->
-        <div class="card mb-4">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img class="card-img-top" src="Strawberry-juice-fruit-drinks_1920x1080.jpg">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!--Card content-->
-          <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">STRAWBERRY JUICE</h4>
-            <!--Text-->
-            <p class="card-text">It is widely appreciated for its characteristic aroma, bright red color, juicy texture,
-              and sweetness.
-            </p>
-            <h4 class="blink">Price:250Rs</h4>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-            </center>
-
-          </div>
-
-        </div>
-        <!-- Card -->
-
-      </div>
-      <!-- Card deck -->
-      <div class="container-fluid">
-        <!-- Card deck -->
-        <div class="card-deck">
-
-          <!-- Card -->
-          <div class="card mb-4">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="16060.jpg" Card image cap>
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">MOCKTAIL</h4>
-              <!--Text-->
-              <p class="card-text">A mocktail can best be described as a cocktail without the liquor, using juices,
-                sodas, infused waters and many other non-alcoholic.</p>
-              <h4 class="blink">Price:250Rs</h4>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <center>
-                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-              </center>
-            </div>
-
-          </div>
-          <!-- Card -->
-
-          <!-- Card -->
-          <div class="card mb-4">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="Smoothies-milk-bananas-berries_1920x1080.jpg" alt="Card image cap">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">SMOOTHIE</h4>
-              <!--Text-->
-              <p class="card-text">A smoothie is a thick and creamy beverage made from pureed raw fruit, vegetables, and
-                sometimes dairy products.</p>
-              <h4 class="blink">Price:350Rs</h4>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <center>
-                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-              </center>
-            </div>
-
-          </div>
-          <!-- Card -->
-
-
-
-        </div>
-        <!-- Card deck -->
-        <!-- Card deck -->
-        <div class="card-deck">
-
-          <!-- Card -->
-          <div class="card mb-4">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="Three-cups-of-fruit-juice-apples-oranges-tomatoes_1920x1080.jpg"
-                alt="Card image cap">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">TOMATO JUICE</h4>
-              <!--Text-->
-              <p class="card-text">Tomato juice is a popular drink, made from the juice of fresh tomatoes. Though you can buy pure tomato juice.</p>
-              <h4 class="blink">Price:350Rs</h4>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <center>
-                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-              </center>
-            </div>
-
-          </div>
-          <!-- Card -->
-
-          <!-- Card -->
-          <div class="card mb-4">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="new.png">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">POMEGRANATE JUICE</h4>
-              <!--Text-->
-              <p class="card-text"> The juice of this fruit is a popular part of healthy diets. Pomegranate seeds get their vibrant red hue from polyphenols. 
-                </p>
-              <h4 class="blink">Price:350Rs</h4>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <center>
-                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-              </center>
-            </div>
-
-          </div>
-          <!-- Card -->
-
-          <!-- Card -->
-          <div class="card mb-4">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img class="card-img-top" src="smoothie-wallpapers-hd-68890-586977.png" alt="Card image cap">
-              <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!--Title-->
-              <h4 class="card-title">CARROT JUICE</h4>
-              <!--Text-->
-              <p class="card-text"> Carrot juice is a delicious and nutritious drink rich in beta carotene, vitamins A, B, C, D, E, and K, and minerals like calcium.</p>
-              <h4 class="blink">Price:350Rs</h4>
-              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-              <center>
-                <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-              </center>
-
-            </div>
-
-          </div>
-          <!-- Card -->
-          <!-- Card deck -->
-          <div class="container-fluid">
-            <!-- Card deck -->
-            <div class="card-deck">
-
-              <!-- Card -->
-              <div class="card mb-4">
-
-                <!--Card image-->
-                <div class="view overlay">
-                  <img class="card-img-top" src="chocolate juice.jpg" Card image cap>
-                  <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
-
-                <!--Card content-->
-                <div class="card-body">
-
-                  <!--Title-->
-                  <h4 class="card-title">CHOCOLATE JUICES</h4>
-                  <!--Text-->
-                  <p class="card-text">Juice Plus Complete Hot Chocolate! this recipe uses the amazing Juice Plus
-                    Complete protein shake mix.</p>
-                  <h4 class="blink">Price:350Rs</h4>
-                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                  <center>
-                    <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-                  </center>
-                </div>
-
-              </div>
-              <!-- Card -->
-
-              <!-- Card -->
-              <div class="card mb-4">
-
-                <!--Card image-->
-                <div class="view overlay">
-                  <img class="card-img-top" src="protien shakes.jpg" alt="Card image cap">
-                  <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
-
-                <!--Card content-->
-                <div class="card-body">
-
-                  <!--Title-->
-                  <h4 class="card-title">PROTIEN SHAKES</h4>
-                  <!--Text-->
-                  <p class="card-text">A Healthy & Nutritious Protein Snack To Help You Power Through Your Day. 100%
-                    Portable.<br>Price:350Rs</p>
-                  <h4 class="blink">Price:350Rs</h4>
-                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                  <center>
-                    <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-                  </center>
-                </div>
-
-              </div>
-              <!-- Card -->
-
-            </div>
-            <!-- Card deck -->
-          </div>
-
+        {{/each}}
         </div>
   </center>
-  <p class="display-1 text-center">Our Deals</p>
-  <center>
-    <div class="container-fluid">
-      <!-- Card deck -->
-      <div class="card-deck">
-
-        <!-- Card -->
-        <div class="card mb-4">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img class="card-img-top" src="deal 1.jpg" alt="Card image cap">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!--Card content-->
-          <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">Summer Deals</h4>
-            <!--Text-->
-            <p class="card-text">Buy 2 Fruit Juices Get 1 Vegetable juice Free.</p>
-            <h4 class="blink">Price:350Rs</h4>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-            </center>
-          </div>
-
-        </div>
-        <!-- Card -->
-
-        <!-- Card -->
-        <div class="card mb-4">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img class="card-img-top" src="deal 4.jfif" alt="Card image cap">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!--Card content-->
-          <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">Mid-Night Deals</h4>
-            <!--Text-->
-            <p class="card-text">Buy 2 Protien Shakes Get 1 smoothie Free.
-
-            </p>
-            <h4 class="blink">Price:350Rs</h4>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-            </center>
-          </div>
-
-        </div>
-        <!-- Card -->
-
-        <!-- Card -->
-        <div class="card mb-4">
-
-          <!--Card image-->
-          <div class="view overlay">
-            <img class="card-img-top Card-image-cap" src="deal 3.jpg">
-            <a href="#!">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-
-          <!--Card content-->
-          <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">Kids deals</h4>
-            <!--Text-->
-            <p class="card-text">Buy 3 Chocolate Juices Get 2 Mocktails Free.</p>
-            <h4 class="blink">Price:350Rs</h4>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
-            </center>
-
-          </div>
-
-        </div>
-        <!-- Card -->
-
-      </div>
-      <!-- Card deck -->
-    </div>
 
   <p class="display-1 text-center" id="aboutus">About Us</p>
-
+<center style="padding: 30px;">
     <h2 class="fontchange">What is Shrek Juice?</h2>
-  <h3>Quality Hyeigen is our pirority we never compromise on quality.</h3>
-  <p class="fontstyle">we were pioneers of cold-pressed juicing in Lebanon, and were (and still are!) the only company to offer a fully certified organic juice cleanse. We listened to our customers and grew organically, making the natural transition from juicing as therapy, to supporting a more balanced and healthy lifestyle.
-
-    Today the Sherk Juice is about more than juice and smoothies. It’s a place that takes a holistic approach to beauty, wellness and longevity. We focus on local, nutrient dense foods and a program of workshops that supports our quest and right to live better.</p>
-  <div class="row container">
-
-    <div class="col-sm-1"></div>
-    <div class="col-sm-4">
-      <!-- Card Wider -->
-<div class="card card-cascade wider">
-
-  <!-- Card image -->
-  <div class="view view-cascade overlay">
-    <img  class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h4 class="card-title"><strong>Asmeer Ahmed Khan</strong></h4>
-    <!-- Subtitle -->
-    <h5 class="blue-text pb-2"><strong>Web Designer</strong></h5>
-    <!-- Text -->
-    
-
-    <!-- Linkedin -->
-    <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-    <!-- Twitter -->
-    <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-    <!-- Dribbble -->
-    <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
-  </div>
-
-</div>
+    <h3>Quality Hyeigen is our pirority we never compromise on quality.</h3>
+    <p class="fontstyle">we were pioneers of cold-pressed juicing in Lebanon, and were (and still are!) the only company to offer a fully certified organic juice cleanse. We listened to our customers and grew organically, making the natural transition from juicing as therapy, to supporting a more balanced and healthy lifestyle.
+    Today the Sherk Juice is about more than juice and smoothies. It’s a place that takes a holistic approach to beauty, wellness and longevity. We focus on local, nutrient dense foods and a program of workshops that supports our quest and right to live better.
+    </p>
+    <div class="row container">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="card card-cascade wider">
+            <div class="view view-cascade overlay">
+                <img  class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <div class="card-body card-body-cascade text-center">
+                <h4 class="card-title"><strong>Asmeer Ahmed Khan</strong></h4>
+                <h5 class="blue-text pb-2"><strong>Web Designer</strong></h5>
+                <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
+                <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+                <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+        </div>
     </div>
     <br>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4">
-    </div>
-  </div>
-  <br>
-    
+</center>
