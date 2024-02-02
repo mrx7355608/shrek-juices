@@ -1,6 +1,7 @@
 import { Router } from "express";
 import JuiceModel from "../models/juices.model.js";
 import convertJuiceTypeName from "../utils/convertJuiceTypeName.js";
+import juiceTypeValidator from "../validators/juiceType.validator.js";
 
 const viewsRouter = Router();
 
@@ -29,9 +30,12 @@ viewsRouter.get("/store-location", (_req, res) => {
   res.render("storelocation");
 });
 
-// TODO: add validations for juice type
 viewsRouter.get("/juices/:type", async (req, res) => {
   const { type } = req.params;
+  const isValid = juiceTypeValidator(type);
+  if (!isValid) {
+    return res.render("notfound");
+  }
   const juices = await JuiceModel.find({ type }).lean();
   res.render("juices-page", { type: convertJuiceTypeName(type), juices });
 });
