@@ -9,10 +9,10 @@ import mongoStore from "connect-mongodb-session";
 import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
 import passportSetup from "./passportSetup.js";
-import flash from "express-flash"
-import viewsRouter from "./routes/views.routes.js"
-import authRouter from "./routes/auth.routes.js"
-import indexRouter from "./routes/index.routes.js"
+import flash from "express-flash";
+import viewsRouter from "./routes/views.routes.js";
+import authRouter from "./routes/auth.routes.js";
+import indexRouter from "./routes/index.routes.js";
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(hpp());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(flash())
+app.use(flash());
 app.use(express.static(path.join(__dirname, "..", "..", "/public")));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "..", "/views"));
@@ -31,7 +31,7 @@ app.engine(
     extname: ".hbs",
     defaultLayout: "main.hbs",
     layoutsDir: __dirname + "/../views/layouts",
-  }),
+  })
 );
 // Sessions setup
 const MongoStore = mongoStore(session);
@@ -50,24 +50,24 @@ app.use(
       httpOnly: true,
       secure: process.env.NODE_ENV === "production" ? true : false,
     },
-  }),
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
 passportSetup();
 
 // ROUTES
-app.use("/", indexRouter);
+// TODO: add rate limiting
 app.use("/", viewsRouter);
+app.use("/index", indexRouter);
 app.use("/auth", authRouter);
 
 app.use((_req, res) => {
-    res.render("notfound");
-})
+  res.render("notfound");
+});
 app.use((err, req, res, next) => {
-    console.log(err);
-    res.render("internal-error");
-})
-
+  console.log(err);
+  res.render("internal-error");
+});
 
 export default app;
