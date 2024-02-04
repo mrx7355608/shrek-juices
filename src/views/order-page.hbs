@@ -20,14 +20,14 @@
           min="1"
           max="10"
           class="form-control form-control-plaintext"
-          id="quantity"
+          id="quantityInput"
           value="1"
           style="width: 70px;"
         />
       </div>
       <div class="d-flex justify-content-between align-items-center w-100">
         <p class="font-weight-bold">Total Amount: </p>
-        <p>{{juice.price}} Pkr</p>
+        <p id="totalAmount" class="w-25 text-right">Rs. {{juice.price}}</p>
       </div>
     </div>
     <form method="post">
@@ -45,3 +45,12 @@
     </form>
   </div>
 </div>
+
+<script>
+  const quantityInput = document.getElementById("quantityInput"); const
+  totalAmountTag = document.getElementById("totalAmount");
+  quantityInput.addEventListener("click", (event) => { const amount =
+  quantityInput.value * "{{juice.price}}"; totalAmountTag.innerText = "Rs. " +
+  amount });
+
+</script>
