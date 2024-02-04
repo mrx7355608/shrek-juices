@@ -1,42 +1,47 @@
-<div class="d-flex flex-column align-items-start justify-content-start p-3 pt-4" style="min-height: 80vh">
-    <h1 class="mr-auto my-4 display-4 font-weight-bold">Place Order</h1>
-    <div class="d-flex mt-5">
-        <img class="mr-3" width="140px" height="140px" src="{{juice.imageURL}}" alt="juice-image" />
-        <!--Card content-->
-        <div class="">
-          <h5 class="card-title font-weight-bold">{{juice.name}}</h5>
-          <h6 class="">Price: Pkr.{{juice.price}}</h6>
-        </div>
+<div
+  class="w-100 d-flex justify-content-center align-items-start p-5"
+  style="min-height: 100vh;"
+>
+  <img src="{{juice.imageURL}}" alt="juice-image" class="w-50 rounded" />
+  <div class="align-items-start justify-content-center px-4 py-2 w-50">
+    <h1 class="">{{juice.name}}</h1>
+    <p
+      class=""
+      style="font-weight: 300; font-size: 18px"
+    >{{juice.description}}</p>
+    <div
+      class="d-flex flex-column justify-content-start align-items-start w-100"
+    >
+      <div class="d-flex justify-content-between align-items-center w-100 mt-4">
+
+        <span class="font-weight-bold">Quantity: </span>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          class="form-control form-control-plaintext"
+          id="quantity"
+          value="1"
+          style="width: 70px;"
+        />
+      </div>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <p class="font-weight-bold">Total Amount: </p>
+        <p>{{juice.price}} Pkr</p>
+      </div>
     </div>
-    {{#unless user}}
-    <div class="alert alert-info w-100 mt-4 mb-5">Please login to place your order</div>
-
-    {{else}}
-
-    {{#unless user.isVerified}}
-    <div class="alert alert-info w-100 mt-4 mb-5">Please verify your account to place order</div>
-
-    {{else}}
-    <div class="w-100">
-    {{#if messages.orderSuccess}}
-    <div class="alert alert-success mt-5">{{ messages.orderSuccess }}</div>
-    {{/if}}
-        <form method="post" class="mt-5 w-100" style="max-width: 600px;">
-          <div class="form-group">
-            <label>Address</label>
-            <input name="address" type="text" class="form-control" placeholder="Enter your address">
-            <small class="form-text text-danger">{{ messages.addressError }}</small>
-          </div>
-
-          <div class="form-group mt-4">
-            <label>Phone number</label>
-            <input name="phoneNumber" type="tel" class="form-control" placeholder="Phone number">
-            <small class="form-text text-danger">{{ messages.phoneNumberError }}</small>
-          </div>
-
-          <button type="submit" class="mx-0 btn btn-dark mt-3 mb-5 w-100 shadow-none rounded font-weight-bold">Confirm Order</button>
-        </form>
-    </div>
-    {{/unless}}
-    {{/unless}}
+    <form method="post">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          placeholder="Enter your address"
+        />
+        <small class="form-text text-muted"></small>
+      </div>
+      <button type="submit" class="btn btn-dark btn-md font-weight-bold">Confirm
+        order</button>
+    </form>
+  </div>
 </div>
