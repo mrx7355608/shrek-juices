@@ -2,8 +2,8 @@
   <h2 class="mt-2 font-weight-bold">Create your account</h2>
 
   <form method="post" class="mt-5 w-100" style="max-width: 600px;">
-    {{#if messages.userAlreadyExist}}
-      <div class="alert alert-danger">{{messages.userAlreadyExist}}</div>
+    {{#if messages.userAlreadyExistsError}}
+      <div class="alert alert-danger">{{messages.userAlreadyExistsError}}</div>
     {{/if}}
 
     <div class="form-group input-group-lg">

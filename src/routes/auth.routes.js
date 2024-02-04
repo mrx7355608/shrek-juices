@@ -150,6 +150,10 @@ authRouter.get("/verify-email", async (req, res) => {
   }
 });
 
+authRouter.get("/resend-verification-email", (_req, res) => {
+  res.render("resend-verification-email", { layout: "auth" });
+});
+
 authRouter.post("/resend-verification-email", async (req, res) => {
   const { email } = req.body;
   // Check if email is given and is valid

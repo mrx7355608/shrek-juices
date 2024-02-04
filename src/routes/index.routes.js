@@ -51,9 +51,6 @@ indexRouter.get("/order/:juiceID", async (req, res) => {
   // Render order page with juice details
   res.render("order-page", { juice, user: req.user });
 });
-indexRouter.get("/resend-verification-email", (_req, res) => {
-  res.render("resend-verification-email", { layout: "auth" });
-});
 
 // TODO: add missing functionality
 indexRouter.post("/contact-us", async (req, res) => {

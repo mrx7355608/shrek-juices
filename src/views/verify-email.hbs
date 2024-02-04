@@ -1,29 +1,29 @@
 <div class="w-100 p-5" style="min-height: 70vh;">
-    <h1 class="font-weight-bold text-center mb-4 display-4">Email verification</h1>
+  <h1 class="font-weight-bold text-center mb-4 display-4">Email verification</h1>
 
-    {{#if messages.emailVerificationError }}
-        <div class="alert alert-danger">{{ messages.emailVerificationError }}</div>
-    {{/if}}
+  {{#if messages.emailVerificationError}}
+    <div class="alert alert-danger">{{messages.emailVerificationError}}</div>
+  {{/if}}
 
-    {{#if messages.missingTokenError }}
-        <div class="alert alert-danger">{{ messages.missingTokenError }}</div>
-    {{/if}}
+  {{#if messages.missingTokenError}}
+    <div class="alert alert-danger">{{messages.missingTokenError}}</div>
+  {{/if}}
 
-    {{#if messages.invalidTokenError }}
-        <div class="alert alert-danger">
-            {{ messages.invalidTokenError }}
-            <a href="/resend-verification-email">Resend Verification Email</a>
-        </div>
-    {{/if}}
+  {{#if messages.invalidTokenError}}
+    <div class="alert alert-danger">
+      {{messages.invalidTokenError}}
+      <a href="/resend-verification-email">Resend Verification Email</a>
+    </div>
+  {{/if}}
 
-    {{#if messages.tokenExpiredError }}
-        <div class="alert alert-danger">
-            {{ messages.tokenExpiredError }}
-            <a href="/resend-verification-email">Resend Verification Email</a>
-        </div>
-    {{/if}}
+  {{#if messages.tokenExpiredError}}
+    <div class="alert alert-danger">
+      {{messages.tokenExpiredError}}
+      <a href="/auth/resend-verification-email">Resend Verification Email</a>
+    </div>
+  {{/if}}
 
-    {{#if messages.emailVerificationSuccess }}
-        <div class="alert alert-success">{{ messages.emailVerificationSuccess }}</div>
-    {{/if}}
+  {{#if messages.emailVerificationSuccess}}
+    <div class="alert alert-success">{{messages.emailVerificationSuccess}}</div>
+  {{/if}}
 </div>
