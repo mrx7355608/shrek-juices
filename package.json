@@ -1,36 +1,36 @@
 {
-    "name": "shrek-juices",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "dev": "nodemon src/server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "connect-mongodb-session": "^3.1.1",
-        "dotenv": "^16.3.1",
-        "express": "^4.18.2",
-        "express-flash": "^0.0.2",
-        "express-handlebars": "^7.1.2",
-        "express-session": "^1.17.3",
-        "helmet": "^7.1.0",
-        "hpp": "^0.2.3",
-        "joi": "^17.11.0",
-        "jsonwebtoken": "^9.0.2",
-        "mongoose": "^8.0.3",
-        "morgan": "^1.10.0",
-        "nodemailer": "^6.9.8",
-        "passport": "^0.7.0",
-        "passport-local": "^1.0.0",
-        "validator": "^13.11.0"
-    },
-    "devDependencies": {
-        "eslint": "^8.56.0",
-        "nodemon": "^3.0.2"
-    }
+  "name": "shrek-juices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.8",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.2"
+  }
 }
