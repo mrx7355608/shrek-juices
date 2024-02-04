@@ -44,10 +44,6 @@ viewsRouter.get("/juices/:type", async (req, res) => {
   res.render("juices-page", { type: convertJuiceTypeName(type), juices });
 });
 
-viewsRouter.get("/login", (_req, res) => {
-  res.render("login", { layout: "auth" });
-});
-
 viewsRouter.get("/order/:juiceID", async (req, res) => {
   // Validate juice id
   const { juiceID } = req.params;

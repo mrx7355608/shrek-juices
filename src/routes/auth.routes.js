@@ -78,6 +78,10 @@ authRouter.post("/signup", async (req, res) => {
   }
 });
 
+authRouter.get("/login", (_req, res) => {
+  res.render("login", { layout: "auth" });
+});
+
 authRouter.post(
   "/login",
   passport.authenticate("local", {
