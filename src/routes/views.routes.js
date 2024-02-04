@@ -48,10 +48,6 @@ viewsRouter.get("/login", (_req, res) => {
   res.render("login", { layout: "auth" });
 });
 
-viewsRouter.get("/signup", (_req, res) => {
-  res.render("signup", { layout: "auth" });
-});
-
 viewsRouter.get("/order/:juiceID", async (req, res) => {
   // Validate juice id
   const { juiceID } = req.params;

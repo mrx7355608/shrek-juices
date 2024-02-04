@@ -1,47 +1,133 @@
-
 <div class="mx-auto my-5 pt-3" style="max-width: 600px;">
-<h2 class="mt-2 font-weight-bold">Create your account</h2>
+  <h2 class="mt-2 font-weight-bold">Create your account</h2>
 
+  <form method="post" class="mt-5 w-100" style="max-width: 600px;">
+    {{#if messages.userAlreadyExist}}
+      <div class="alert alert-danger">{{messages.userAlreadyExist}}</div>
+    {{/if}}
 
-<form method="post" action="/auth/signup" class="mt-5 w-100" style="max-width: 600px;">
+    <div class="form-group input-group-lg">
+      <label>First name</label>
+      {{#if signupData.firstname}}
+        <input
+          name="firstname"
+          type="text"
+          class="form-control"
+          placeholder="Enter first name"
+          value="{{signupData.firstname}}"
+        />
+      {{else}}
+        <input
+          name="firstname"
+          type="text"
+          class="form-control"
+          placeholder="Enter first name"
+        />
+      {{/if}}
+      <small class="form-text text-danger">{{messages.firstNameError}}</small>
+    </div>
 
-  <div class="form-group input-group-lg">
-    <label>First name</label>
-    <input name="firstname" type="text" class="form-control" placeholder="Enter first name">
-    <small class="form-text text-danger">{{ messages.firstNameError }}</small>
-  </div>
+    <div class="form-group input-group-lg">
+      <label>Last name</label>
+      {{#if signupData.lastname}}
+        <input
+          name="lastname"
+          type="text"
+          class="form-control"
+          placeholder="Enter last name"
+          value="{{signupData.lastname}}"
+        />
+      {{else}}
+        <input
+          name="lastname"
+          type="text"
+          class="form-control"
+          placeholder="Enter last name"
+        />
+      {{/if}}
+      <small class="form-text text-danger">{{messages.lastNameError}}</small>
+    </div>
 
-  <div class="form-group input-group-lg">
-    <label>Last name</label>
-    <input name="lastname" type="text" class="form-control" placeholder="Enter last name">
-    <small class="form-text text-danger">{{ messages.lastNameError }}</small>
-  </div>
+    <div class="form-group input-group-lg">
+      <label for="exampleInputEmail1">Email address</label>
+      {{#if signupData.email}}
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          value="{{signupData.email}}"
+        />
+      {{else}}
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
+      {{/if}}
+      <small class="form-text text-danger">{{messages.emailError}}</small>
+    </div>
 
-  <div class="form-group input-group-lg">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-    <small class="form-text text-danger">{{ messages.emailError }}</small>
-  </div>
+    <div class="form-group input-group-lg mt-4">
+      <label>Password</label>
+      {{#if signupData.password}}
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          value="{{signupData.password}}"
+        />
+      {{else}}
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+        />
+      {{/if}}
+      <small class="form-text text-danger">{{messages.passwordError}}</small>
+    </div>
 
-  <div class="form-group input-group-lg mt-4">
-    <label>Password</label>
-    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    <small class="form-text text-danger">{{ messages.passwordError }}</small>
-  </div>
+    <div class="form-group input-group-lg mt-4">
+      <label>Confirm Password</label>
+      {{#if signupData.confirm_password}}
+        <input
+          name="confirm_password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword2"
+          placeholder="Confirm Password"
+          value="{{signupData.confirm_password}}"
+        />
+      {{else}}
+        <input
+          name="confirm_password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword2"
+          placeholder="Confirm Password"
+        />
+      {{/if}}
+      <small
+        class="form-text text-danger"
+      >{{messages.confirmPasswordError}}</small>
+    </div>
 
-  <div class="form-group input-group-lg mt-4">
-    <label>Confirm Password</label>
-    <input name="confirm_password" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password">
-    <small class="form-text text-danger">{{ messages.confirmPasswordError }}</small>
-  </div>
+    <button
+      type="submit"
+      class="btn btn-outline-dark mt-5 w-100 shadow-none rounded font-weight-bold"
+    >Signup</button>
 
-  <button type="submit" class="btn btn-outline-dark mt-5 w-100 shadow-none rounded font-weight-bold">Signup</button>
+  </form>
 
-</form>
-
-
-<p class="text-center mt-4 mb-5 pb-3">
-Already have an account?
-<a href="/login" class="font-weight-bold text-dark">Login</a>
-</p>
+  <p class="text-center mt-4 mb-5 pb-3">
+    Already have an account?
+    <a href="/login" class="font-weight-bold text-dark">Login</a>
+  </p>
 </div>
