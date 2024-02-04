@@ -30,23 +30,7 @@
         <p id="totalAmount" class="w-25 text-right">Rs. {{juice.price}}</p>
       </div>
     </div>
-    {{#if user}}
-      <form method="post">
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            id="address"
-            placeholder="Enter your address"
-          />
-          <small class="form-text text-muted"></small>
-        </div>
-        <button
-          type="submit"
-          class="btn btn-dark btn-md font-weight-bold"
-        >Confirm order</button>
-      </form>
-    {{/if}}
+
     {{#unless user}}
       <div class="alert alert-info w-100 mt-4 mb-5">Please login to place your
         order</div>
@@ -56,6 +40,24 @@
       {{#unless user.isVerified}}
         <div class="alert alert-info w-100 mt-4 mb-5">Please verify your account
           to place order</div>
+      {{else}}
+        {{#if user}}
+          <form method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="Enter your address"
+              />
+              <small class="form-text text-muted"></small>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-dark btn-md font-weight-bold"
+            >Confirm order</button>
+          </form>
+        {{/if}}
 
       {{/unless}}
     {{/unless}}
