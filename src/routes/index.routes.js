@@ -6,8 +6,54 @@ import {
 } from "../utils/emails.js";
 import validator from "validator";
 import JuiceModel from "../models/juices.model.js";
+import convertJuiceTypeName from "../utils/convertJuiceTypeName.js";
+import juiceTypeValidator from "../validators/juiceType.validator.js";
+import removeSensitiveUserInfoMiddleware from "../middlewares/removeSensitiveUserInfo.middleware.js";
 
 const indexRouter = Router();
+
+indexRouter.use(removeSensitiveUserInfoMiddleware);
+
+indexRouter.get("/", async (_req, res) => {
+  const randomJuices = await JuiceModel.aggregate([{ $sample: { size: 20 } }]);
+  res.render("home", { juices: randomJuices });
+});
+indexRouter.get("/contact-us", (_req, res) => {
+  res.render("contactus");
+});
+indexRouter.get("/franchising", (_req, res) => {
+  res.render("franchising");
+});
+indexRouter.get("/store-location", (_req, res) => {
+  res.render("storelocation");
+});
+indexRouter.get("/juices/:type", async (req, res) => {
+  const { type } = req.params;
+  const isValid = juiceTypeValidator(type);
+  if (!isValid) {
+    return res.render("notfound");
+  }
+  const juices = await JuiceModel.find({ type }).lean();
+  res.render("juices-page", { type: convertJuiceTypeName(type), juices });
+});
+indexRouter.get("/order/:juiceID", async (req, res) => {
+  // Validate juice id
+  const { juiceID } = req.params;
+  if (!validator.isMongoId(juiceID)) {
+    return res.render("notfound");
+  }
+
+  // Check if juice exists
+  const juice = await JuiceModel.findById(juiceID).lean();
+  if (!juice) {
+    return res.render("notfound");
+  }
+  // Render order page with juice details
+  res.render("order-page", { juice, user: req.user });
+});
+indexRouter.get("/resend-verification-email", (_req, res) => {
+  res.render("resend-verification-email", { layout: "auth" });
+});
 
 // TODO: add missing functionality
 indexRouter.post("/contact-us", async (req, res) => {
@@ -21,15 +67,6 @@ indexRouter.post("/contact-us", async (req, res) => {
   sendContactEmail(data.email, data.message);
   req.flash("contactFormSuccess", "Your message has been sent successfully!");
   res.redirect("back");
-});
-
-// Make sure that the user is authenticated
-indexRouter.use((req, res, next) => {
-  if (!req.isAuthenticated()) {
-    req.flash("orderError", "Please login to place your order");
-    return res.redirect("back");
-  }
-  return next();
 });
 
 // TODO: refactor this mess
@@ -49,12 +86,15 @@ indexRouter.post("/order/:juiceID", async (req, res) => {
   }
 
   // send order confirmation email
-  await sendOrderPlacedEmailToCustomer(req.user.email, juice);
+  const { email } = req.user;
+  const { address, phoneNumber } = req.body;
+  const adminEmail = process.env.EMAIL_SENDER;
+  await sendOrderPlacedEmailToCustomer(email, juice);
   await sendOrderPlacedEmailToAdmin(
-    process.env.EMAIL_SENDER,
-    req.user.email,
-    req.body.address,
-    req.body.phoneNumber,
+    adminEmail,
+    email,
+    address,
+    phoneNumber,
     juice
   );
   req.flash("orderSuccess", "Your order has been placed!");

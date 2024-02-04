@@ -10,7 +10,6 @@ import __dirname from "./utils/dirnameImport.js";
 import { engine } from "express-handlebars";
 import passportSetup from "./passportSetup.js";
 import flash from "express-flash";
-import viewsRouter from "./routes/views.routes.js";
 import authRouter from "./routes/auth.routes.js";
 import indexRouter from "./routes/index.routes.js";
 
@@ -58,8 +57,7 @@ passportSetup();
 
 // ROUTES
 // TODO: add rate limiting
-app.use("/", viewsRouter);
-app.use("/index", indexRouter);
+app.use("/", indexRouter);
 app.use("/auth", authRouter);
 
 app.use((_req, res) => {
