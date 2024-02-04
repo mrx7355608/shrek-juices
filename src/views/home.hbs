@@ -1,13 +1,11 @@
-{{> carousel}} 
-  <p class="display-1 text-center">Menu</p>
-
-  <center>
+{{> carousel}}
+  <center class="my-5">
     <div class="container-fluid">
       <!-- Card deck -->
-      <div class="card-deck" style="flex-wrap: wrap;">
+      <div class="card-deck justify-content-center" style="flex-wrap: wrap;">
       {{#each juices}}
         <!-- Card -->
-        <div class="card mb-4" style="min-width: 400px; max-width: 400px;">
+        <div class="card mb-4" style="min-width: 410px; max-width: 410px;">
           <!--Card image-->
           <div class="view overlay">
             <img class="card-img-top" src="{{imageURL}}">
@@ -21,7 +19,9 @@
             <h4 class="blink">Price: Pkr.{{price}}</h4>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
             <center>
-              <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
+                <a href="/order/{{_id}}">
+                    <button type="button" class="btn aqua-gradient btn-md">ORDER NOW</button>
+                </a>
             </center>
           </div>
         </div>
