@@ -2,14 +2,18 @@ import { Router } from "express";
 import JuiceModel from "../models/juices.model.js";
 import convertJuiceTypeName from "../utils/convertJuiceTypeName.js";
 import juiceTypeValidator from "../validators/juiceType.validator.js";
+import validator from "validator";
 
 const viewsRouter = Router();
 
 viewsRouter.use((req, res, next) => {
-  /* 
-        TODO: remove sensitive data from req.user
-    */
-  res.locals.user = req.user;
+  const user = req.user;
+  if (user) {
+    user.password = undefined;
+    user.__v = undefined;
+  }
+
+  res.locals.user = user;
   return next();
 });
 
@@ -48,10 +52,19 @@ viewsRouter.get("/signup", (_req, res) => {
   res.render("signup", { layout: "auth" });
 });
 
-// TODO: add validations for juice ID
 viewsRouter.get("/order/:juiceID", async (req, res) => {
+  // Validate juice id
   const { juiceID } = req.params;
+  if (!validator.isMongoId(juiceID)) {
+    return res.render("notfound");
+  }
+
+  // Check if juice exists
   const juice = await JuiceModel.findById(juiceID).lean();
+  if (!juice) {
+    return res.render("notfound");
+  }
+  // Render order page with juice details
   res.render("order-page", { juice, user: req.user });
 });
 
